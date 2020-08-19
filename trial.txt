@@ -1,0 +1,17 @@
+function printDiv()
+{
+  var ques=document.getElementById('hp');
+  var divToPrint=document.getElementById('mp');
+
+  var newWin=window.open('','Print-Window');
+  newWin.document.open();
+  newWin.document.write('<html><body style="font-family:Segoe UI" onload="window.print()">'
+                        +'<h1>'+ques.innerHTML+'</h1><center>'+divToPrint.innerHTML
+                        +'</center></body></html>');
+  newWin.document.close();
+  setTimeout(function(){newWin.close();},10);
+}
+
+$("#printBut").click(function(){
+  printDiv();
+})

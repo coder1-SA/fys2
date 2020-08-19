@@ -1,0 +1,90 @@
+<!-- T3, LAB -->
+<form action="php/post_send1.php?test1=t3&test2=lab" method="post">
+  <div class="col s12 m2">
+    <a class="modal-trigger" href="#modal3">
+      <div class="card light-blue darken-3 z-depth-3">
+        <div class="card-content white-text center">
+          <i class="material-icons" style="font-size:300%">assignment_turned_in</i>
+          <p class="center" style="font-size:150%">Test 3 & Lab</p>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- T3, LAB Modal Structure -->
+  <div id="modal3" class="modal">
+    <div class="modal-content center">
+      <span id='txt3'>Are you sure you want to send the Results of Test 3 & Lab?</span><br>
+      <div class="row">
+        <div class="col m6">
+          <select id='year3' class="browser-default" name="year" required>
+            <option value="" disabled selected>Select Year</option>
+            <?php
+              $sql = "SELECT distinct(year) AS Y FROM stu_master;";
+              $res = mysqli_query($conn,$sql);
+              while($row=mysqli_fetch_array($res, MYSQLI_ASSOC))
+              {
+                echo "<option value='".$row['Y']."'>".$row['Y']."</option>";
+              }
+            ?>
+          </select>
+        </div>
+        <div class="col m6">
+          <select id='sec3' class="browser-default" name="sec" required>
+            <option value="" disabled selected>Select Section</option>
+          </select>
+        </div>
+      </div>
+      <img id='im3' src="" alt="" style="height:247px; width:337px"> <br>
+        <button id='butt3' class="btn waves-effect waves-light light-blue" type="submit" name="action">Send
+          <i class="material-icons right">send</i>
+        </button>
+    </div>
+  </div>
+</form>
+
+
+<!-- T3 -->
+<form action="php/post_send.php?test=t3" method="post">
+  <div class="col s12 m2">
+    <a class="modal-trigger" href="#modal7">
+      <div class="card light-blue darken-3 z-depth-3">
+        <div class="card-content white-text center">
+          <i class="material-icons" style="font-size:300%">assignment_turned_in</i>
+          <p class="center" style="font-size:150%">Test 3</p>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- T3 Modal Structure -->
+  <div id="modal7" class="modal">
+    <div class="modal-content center">
+      <span id='txt7'>Are you sure you want to send the Results of Test 3?</span><br>
+      <div class="row">
+        <div class="col m6">
+          <select id='year7' class="browser-default" name="year" required>
+            <option value="" disabled selected>Select Year</option>
+            <?php
+              $sql = "SELECT distinct(year) AS Y FROM stu_master;";
+              $res = mysqli_query($conn,$sql);
+              while($row=mysqli_fetch_array($res, MYSQLI_ASSOC))
+              {
+                echo "<option value='".$row['Y']."'>".$row['Y']."</option>";
+              }
+            ?>
+          </select>
+        </div>
+        <div class="col m6">
+          <select id='sec3' class="browser-default" name="sec" required>
+            <option value="" disabled selected>Select Section</option>
+          </select>
+        </div>
+      </div>
+      <img id='im7' src="" alt="" style="height:247px; width:337px"> <br>
+        <button id='butt7' class="btn waves-effect waves-light light-blue" type="submit" name="action">Send
+          <i class="material-icons right">send</i>
+        </button>
+    </div>
+  </div>
+</form>
